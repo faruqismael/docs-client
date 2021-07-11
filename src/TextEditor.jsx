@@ -82,9 +82,9 @@ const TextEditor = () => {
   const wrapperRef = useCallback((wrapper) => {
     if (wrapper == null) return;
     wrapper.innerHTML = "";
-    const editor = document.createElement("div");
-    wrapper.append(editor);
+    const editor = document.createElement("main");
 
+    wrapper.append(editor);
     const q = new Quill(editor, {
       theme: "snow",
       modules: {
@@ -96,7 +96,11 @@ const TextEditor = () => {
     setQuill(q);
   }, []);
 
-  return <div className="container" ref={wrapperRef}></div>;
+  return (
+    <div>
+      <div className="container" ref={wrapperRef}></div>
+    </div>
+  );
 };
 
 export default TextEditor;

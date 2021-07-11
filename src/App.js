@@ -6,6 +6,7 @@ import {
   Redirect,
 } from "react-router-dom";
 import { v4 as uuidV4 } from "uuid";
+import DisplayURL from "./DisplayURL";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Redirect to={`/documents/${uuidV4()}`} />
         </Route>
         <Route exact path="/documents/:id">
+          <DisplayURL />
           <TextEditor />
         </Route>
       </Switch>
