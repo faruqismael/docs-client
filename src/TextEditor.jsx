@@ -21,7 +21,7 @@ const TextEditor = () => {
   const { id: documentId } = useParams();
 
   useEffect(() => {
-    if (socket == undefined || quill == undefined) return;
+    if (socket === undefined || quill === undefined) return;
 
     socket.once("load-document", (document) => {
       quill.setContents(document);
