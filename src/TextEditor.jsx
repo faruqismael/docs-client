@@ -33,7 +33,7 @@ const TextEditor = () => {
 
   useEffect(() => {
     // if (socket == undefined) return;
-    const s = io("http://localhost:5003");
+    const s = io(`http://localhost:${9999}`);
     setSocket(s);
 
     return () => {
